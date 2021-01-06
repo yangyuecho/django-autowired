@@ -1,7 +1,7 @@
 import random
 import string
 
-DEBUG = False
+DEBUG = True
 
 DATABASES = {"default": {"ENGINE": "django.db.backends.sqlite3", "NAME": ":memory:"}}
 SECRET_KEY = "".join([random.choice(string.ascii_letters) for x in range(40)])
@@ -15,7 +15,7 @@ MIDDLEWARE = [
     "django_autowired.middleware.AutoWiredExceptionMiddleware",
 ]
 INSTALLED_APPS = [
-    "django.contrib.admin",
+    # "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
@@ -24,3 +24,5 @@ INSTALLED_APPS = [
     "django_autowired",
     "tests",
 ]
+
+STATIC_URL = "/static/"
